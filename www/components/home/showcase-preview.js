@@ -72,12 +72,12 @@ export default () => {
         `}</style>
         <div className="overlay" />
         <div className="slides">
-          {DATA.slice(0, DATA.length - 1).map((item, i) => {
+          {DATA.slice(0, DATA.length - 1).map(item => {
             return (
-              <div className="slide" key={`thumbnail-${i}`}>
+              <div className="slide" key={item.internalUrl}>
                 <Img
                   src={item.src.replace('/showcases/', '/showcase-thumbnails/')}
-                  alt={`Showcase ${i}`}
+                  alt={item.title}
                   height={imgHeight}
                   width={imgWidth}
                   layout="responsive"
@@ -168,8 +168,8 @@ export default () => {
             const top = z * (margin + 5);
             return (
               <Link
-                key={`showcase-${i}`}
-                href={`/showcase?from=click&item=${item.internalUrl}`}
+                key={item.internalUrl}
+                href="/showcase/[item]?from=click"
                 as={`/showcase/${item.internalUrl}`}
               >
                 <div
