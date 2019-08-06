@@ -99,7 +99,13 @@ const sortOrder = [
   'bang-olufsen',
   'futurism',
   'nubank',
-  'ferrari'
+  'ferrari',
+  'movietickets',
+  'mesalva',
+  'ohtuleht',
+  'stargatecommand',
+  'shakeshack',
+  'coop'
 ];
 
 const mapping = {
@@ -900,6 +906,60 @@ const mapping = {
     internalUrl: 'ferrari',
     tags: ['entertainment'],
     highlighted: 1
+  },
+  movietickets: {
+    title: 'MovieTickets',
+    link: 'https://www.movietickets.com',
+    src: '/static/images/showcases/ferrari.jpg',
+    width: 3836,
+    height: 2200,
+    internalUrl: 'movietickets',
+    tags: ['e-commerce', 'entertainment']
+  },
+  mesalva: {
+    title: 'Me Salva!',
+    link: 'https://www.mesalva.com',
+    src: '/static/images/showcases/ferrari.jpg',
+    width: 3836,
+    height: 2200,
+    internalUrl: 'mesalva',
+    tags: ['education']
+  },
+  ohtuleht: {
+    title: 'Õhtuleht',
+    link: 'https://www.ohtuleht.ee',
+    src: '/static/images/showcases/ferrari.jpg',
+    width: 3836,
+    height: 2200,
+    internalUrl: 'ohtuleht',
+    tags: ['news']
+  },
+  stargatecommand: {
+    title: 'Stargate Command',
+    link: 'https://www.stargatecommand.co',
+    src: '/static/images/showcases/ferrari.jpg',
+    width: 3836,
+    height: 2200,
+    internalUrl: 'stargatecommand',
+    tags: ['entertainment']
+  },
+  shakeshack: {
+    title: 'Shake Shack',
+    link: 'https://order.shakeshack.com/',
+    src: '/static/images/showcases/ferrari.jpg',
+    width: 3836,
+    height: 2200,
+    internalUrl: 'shakeshack',
+    tags: ['e-commerce']
+  },
+  coop: {
+    title: 'Co-op Shop',
+    link: 'https://shop.coop.co.uk',
+    src: '/static/images/showcases/ferrari.jpg',
+    width: 3836,
+    height: 2200,
+    internalUrl: 'coop',
+    tags: ['e-commerce']
   }
 };
 
