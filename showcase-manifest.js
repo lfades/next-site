@@ -910,7 +910,7 @@ const mapping = {
   movietickets: {
     title: 'MovieTickets',
     link: 'https://www.movietickets.com',
-    src: '/static/images/showcases/ferrari.jpg',
+    src: '/static/images/showcases/movietickets.jpg',
     width: 3836,
     height: 2200,
     internalUrl: 'movietickets',
@@ -919,7 +919,7 @@ const mapping = {
   mesalva: {
     title: 'Me Salva!',
     link: 'https://www.mesalva.com',
-    src: '/static/images/showcases/ferrari.jpg',
+    src: '/static/images/showcases/mesalva.png',
     width: 3836,
     height: 2200,
     internalUrl: 'mesalva',
@@ -928,7 +928,7 @@ const mapping = {
   ohtuleht: {
     title: 'Õhtuleht',
     link: 'https://www.ohtuleht.ee',
-    src: '/static/images/showcases/ferrari.jpg',
+    src: '/static/images/showcases/ohtuleht.jpg',
     width: 3836,
     height: 2200,
     internalUrl: 'ohtuleht',
@@ -937,7 +937,7 @@ const mapping = {
   stargatecommand: {
     title: 'Stargate Command',
     link: 'https://www.stargatecommand.co',
-    src: '/static/images/showcases/ferrari.jpg',
+    src: '/static/images/showcases/stargatecommand.jpg',
     width: 3836,
     height: 2200,
     internalUrl: 'stargatecommand',
@@ -946,7 +946,7 @@ const mapping = {
   shakeshack: {
     title: 'Shake Shack',
     link: 'https://order.shakeshack.com/',
-    src: '/static/images/showcases/ferrari.jpg',
+    src: '/static/images/showcases/shakeshack.jpg',
     width: 3836,
     height: 2200,
     internalUrl: 'shakeshack',
@@ -955,7 +955,7 @@ const mapping = {
   coop: {
     title: 'Co-op Shop',
     link: 'https://shop.coop.co.uk',
-    src: '/static/images/showcases/ferrari.jpg',
+    src: '/static/images/showcases/coop.png',
     width: 3836,
     height: 2200,
     internalUrl: 'coop',
