@@ -105,7 +105,8 @@ const sortOrder = [
   'ohtuleht',
   'stargatecommand',
   'shakeshack',
-  'coop'
+  'coop',
+  'mprnews'
 ];
 
 const mapping = {
@@ -911,8 +912,8 @@ const mapping = {
     title: 'MovieTickets',
     link: 'https://www.movietickets.com',
     src: '/static/images/showcases/movietickets.jpg',
-    width: 3836,
-    height: 2200,
+    width: 3840,
+    height: 2159,
     internalUrl: 'movietickets',
     tags: ['e-commerce', 'entertainment']
   },
@@ -920,8 +921,8 @@ const mapping = {
     title: 'Me Salva!',
     link: 'https://www.mesalva.com',
     src: '/static/images/showcases/mesalva.png',
-    width: 3836,
-    height: 2200,
+    width: 3840,
+    height: 2159,
     internalUrl: 'mesalva',
     tags: ['education']
   },
@@ -929,8 +930,8 @@ const mapping = {
     title: 'Õhtuleht',
     link: 'https://www.ohtuleht.ee',
     src: '/static/images/showcases/ohtuleht.jpg',
-    width: 3836,
-    height: 2200,
+    width: 3840,
+    height: 2159,
     internalUrl: 'ohtuleht',
     tags: ['news']
   },
@@ -938,8 +939,8 @@ const mapping = {
     title: 'Stargate Command',
     link: 'https://www.stargatecommand.co',
     src: '/static/images/showcases/stargatecommand.jpg',
-    width: 3836,
-    height: 2200,
+    width: 3840,
+    height: 2159,
     internalUrl: 'stargatecommand',
     tags: ['entertainment']
   },
@@ -947,8 +948,8 @@ const mapping = {
     title: 'Shake Shack',
     link: 'https://order.shakeshack.com/',
     src: '/static/images/showcases/shakeshack.jpg',
-    width: 3836,
-    height: 2200,
+    width: 3840,
+    height: 2159,
     internalUrl: 'shakeshack',
     tags: ['e-commerce']
   },
@@ -956,10 +957,19 @@ const mapping = {
     title: 'Co-op Shop',
     link: 'https://shop.coop.co.uk',
     src: '/static/images/showcases/coop.png',
-    width: 3836,
-    height: 2200,
+    width: 3840,
+    height: 2159,
     internalUrl: 'coop',
     tags: ['e-commerce']
+  },
+  mprnews: {
+    title: 'MPR News',
+    link: 'https://www.mprnews.org',
+    src: '/static/images/showcases/mprnews.jpg',
+    width: 3840,
+    height: 2159,
+    internalUrl: 'mprnews',
+    tags: ['news']
   }
 };
 
