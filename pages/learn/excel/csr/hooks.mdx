@@ -55,6 +55,8 @@ export default Index;
 
 With the above changes we moved the data fetch to hooks, now page transitions are very fast between other pages and our index page, even though we haven't removed the 1 second delay.
 
+`useEffect` executes the function right after the first render and always in the browser, it uses the array in the second argument to re-execute the function when any of the values (a.k.a dependencies) inside the array changes, because our dependencies are an empty array (`[]`) then our function will only run once.
+
 The page is also static thanks to the lack of `getInitialProps`.
 
 export default ({ children }) => <Layout meta={meta}>{children}</Layout>;
