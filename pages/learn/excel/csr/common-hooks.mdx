@@ -1,0 +1,49 @@
+import Layout from '../../../../components/learn/Layout';
+import AnswerBox from '../../../../components/learn/AnswerBox';
+
+export const meta = {
+  title: 'CSR',
+  courseId: 'excel',
+  lessonId: 'csr',
+  stepId: 'ssr-app',
+  question: {
+    answers: [
+      'The index page now shows a loading while the fetch finishes',
+      'It takes more time to navigate between pages',
+      'A delay was introduced, but only in the first render',
+      'Navigations are just fine'
+    ],
+    correctAnswer: 'It takes more time to navigate between pages'
+  }
+};
+
+## Common Hooks
+
+You may have noticed something while playing with the app that there are no loading states between page navigations, once you navigate the data is already there and the page is ready, that's the magic of Server Side Rendering.
+
+But what would happen if the request takes too long? Open `pages/index.js` and replace the current `getInitialProps` with the following:
+
+```jsx
+Index.getInitialProps = async function() {
+  await new Promise(resolve => setTimeout(() => resolve(), 1000));
+
+  const res = await fetch('https://api.tvmaze.com/search/shows?q=batman');
+  const data = await res.json();
+
+  return {
+    shows: data.map(entry => entry.show)
+  };
+};
+```
+
+This is the the only change we have introduced to the page:
+
+```js
+await new Promise(resolve => setTimeout(() => resolve(), 1000));
+```
+
+We added a delay to the fetch call, this would mean the render will take 1 second longer, you can also do the same by adding some `throttling` in the Network tab in devtools.
+
+Now that we have simulated a slow connection (or a very long fetch operation), what can you notice after navigating between the index page and other routes?
+
+export default ({ children }) => <Layout meta={meta}>{children}</Layout>;

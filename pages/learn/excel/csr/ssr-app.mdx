@@ -1,0 +1,34 @@
+import Layout from '../../../../components/learn/Layout';
+import AnswerBox from '../../../../components/learn/AnswerBox';
+
+export const meta = {
+  title: 'CSR',
+  courseId: 'excel',
+  lessonId: 'csr',
+  stepId: 'ssr-app',
+  question: {
+    answers: [
+      'The index page now shows a loading while the fetch finishes',
+      'It takes more time to navigate between pages',
+      'A delay was introduced, but only in the first render',
+      'Navigations are just fine'
+    ],
+    correctAnswer: 'It takes more time to navigate between pages'
+  }
+};
+
+## Server Rendered App
+
+You may have noticed something while playing with the app that there are no loading states between page navigations, once you navigate the data is already there and the page is ready, that's the magic of Server Side Rendering.
+
+But what would happen if the request takes too long? Open `lib/shows.js` and add the following line to the beginning of the `getShows` function:
+
+```js
+await new Promise(resolve => setTimeout(() => resolve(), 1000));
+```
+
+We added a delay of 1 second to `getShows`, which is being used inside the pages to fetch the shows, it would mean the render will take much longer. You can also do the same by adding some `throttling` in the Network tab in devtools.
+
+Now that we have simulated a slow connection (or a very long data fetch), what can you notice after navigating between routes?
+
+export default ({ children }) => <Layout meta={meta}>{children}</Layout>;

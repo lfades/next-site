@@ -1,0 +1,19 @@
+import Layout from '../../../../components/learn/Layout';
+
+export const meta = {
+  title: 'CSR',
+  courseId: 'excel',
+  lessonId: 'csr'
+};
+
+Next.js is server rendered by default, meaning your code will not always run in a browser. This is specially true for pages using `getInitialProps`, which will be rendered in your server first before sending the HTML to the browser
+
+This lesson will focus on understanding the way React works in both environments (server and browser).
+
+To go through this lesson it's recommended to have a previous knowledge of:
+
+- The basic lessons
+- [React Hooks](https://reactjs.org/docs/hooks-intro.html)
+- [Automatic Prerendering](https://nextjs.org/learn/excel/automatic-prerendering)
+
+export default ({ children }) => <Layout meta={meta}>{children}</Layout>;

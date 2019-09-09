@@ -1,0 +1,60 @@
+import Layout from '../../../../components/learn/Layout';
+
+export const meta = {
+  title: 'CSR',
+  courseId: 'excel',
+  lessonId: 'csr',
+  stepId: 'hooks'
+};
+
+## React Hooks
+
+To move our data fetch to the client we'll use [useState](https://reactjs.org/docs/hooks-state.html) to save the data and [useEffect](https://reactjs.org/docs/hooks-effect.html) to do the fetch.
+
+Replace the content of `pages/index.js` with the following:
+
+```jsx
+import { useState, useEffect } from 'react';
+import Layout from '../components/MyLayout.js';
+import Link from 'next/link';
+import getShows from '../lib/shows.js';
+
+const Index = () => {
+  const [shows, setShows] = useState();
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const shows = await getShows();
+      setShows(shows);
+    };
+    fetchData();
+  }, []);
+
+  return (
+    <Layout>
+      <h1>Batman TV Shows</h1>
+      {shows ? (
+        <ul>
+          {shows.map(show => (
+            <li key={show.id}>
+              <Link href="/p/[id]" as={`/p/${show.id}`}>
+                <a>{show.name}</a>
+              </Link>
+            </li>
+          ))}
+        </ul>
+      ) : (
+        <p>Loading...</p>
+      )}
+    </Layout>
+  );
+};
+
+export default Index;
+```
+
+With the above changes we moved the data fetch to hooks, now page transitions are very fast between other pages and our index page, even though we haven't removed the 1 second delay.
+
+The page is also static thanks to the lack of `getInitialProps`.
+
+export default ({ children }) => <Layout meta={meta}>{children}</Layout>;

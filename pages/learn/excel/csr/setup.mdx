@@ -1,0 +1,32 @@
+import Layout from '../../../../components/learn/Layout';
+import AnswerBox from '../../../../components/learn/AnswerBox';
+
+export const meta = {
+  title: 'CSR',
+  courseId: 'excel',
+  lessonId: 'csr',
+  stepId: 'setup'
+};
+
+## Setup
+
+In this lesson, we need a simple Next.js app to play with. Try downloading the following example app:
+
+```bash
+git clone https://github.com/zeit/next-learn-demo.git
+cd next-learn-demo
+cd E4-csr
+```
+
+You can run it with:
+
+```bash
+npm install
+npm run dev
+```
+
+Now you can access the app by going to http://localhost:3000.
+
+The example app shows a list of batman shows in the home page, and you can navigate to every show by clicking on it.
+
+export default ({ children }) => <Layout meta={meta}>{children}</Layout>;
