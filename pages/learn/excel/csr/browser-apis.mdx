@@ -1,0 +1,56 @@
+import Layout from '../../../../components/learn/Layout';
+import AnswerBox from '../../../../components/learn/AnswerBox';
+
+export const meta = {
+  title: 'CSR',
+  courseId: 'excel',
+  lessonId: 'csr',
+  stepId: 'browser-apis',
+  question: {
+    answers: [
+      'Error: localStorage is not defined',
+      'The data loads faster',
+      'The page takes more time to render',
+      'Error: localStorage can not be used in hooks'
+    ],
+    correctAnswer: 'Error: localStorage is not defined'
+  }
+};
+
+## Browser APIs
+
+Our fetchs are taking too long, but we can cache the data to not fetch it again unless needed, and we can use `localStorage` for that.
+
+Open `lib/shows.js` and add the following code at the end:
+
+```jsx
+const getItem = name => JSON.parse(localStorage.getItem(name));
+
+export function useLocalStorage(name) {
+  const [item, setState] = useState(getItem(name));
+  const setItem = value => {
+    if (name) {
+      localStorage.setItem(name, JSON.stringify(value));
+      setState(value);
+    }
+  };
+
+  return [item, setItem];
+}
+```
+
+Now inside `useShows` replace `useState()` with:
+
+```jsx
+const [shows, setShows] = useLocalStorage('shows');
+```
+
+And for `useShow`:
+
+```jsx
+const [show, setShow] = useLocalStorage(id && `show.${id}`);
+```
+
+What can you notice after refreshing a page?
+
+export default ({ children }) => <Layout meta={meta}>{children}</Layout>;

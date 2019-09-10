@@ -1,0 +1,21 @@
+import Layout from '../../../../components/learn/Layout';
+import AnswerBox from '../../../../components/learn/AnswerBox';
+
+export const meta = {
+  title: 'CSR',
+  courseId: 'excel',
+  lessonId: 'csr',
+  stepId: 'finally'
+};
+
+## Finally
+
+That's it for this lesson, you should be able to understand the small details of using Next.js in an isomorphic environment.
+
+By knowing the differences between a server side rendering and a prerendered page you should be able to decide what's better for you.
+
+You don't have to pick one method over the other, you may pick SSR for a page, CSR for another, or even do both in another page, then create isomorphic hooks and components that can work in any scenario.
+
+Next.js gives you the tools so you can build the site in your own way.
+
+export default ({ children }) => <Layout meta={meta}>{children}</Layout>;

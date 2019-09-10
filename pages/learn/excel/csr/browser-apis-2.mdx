@@ -1,0 +1,45 @@
+import Layout from '../../../../components/learn/Layout';
+import AnswerBox from '../../../../components/learn/AnswerBox';
+
+export const meta = {
+  title: 'CSR',
+  courseId: 'excel',
+  lessonId: 'csr',
+  stepId: 'browser-apis-2'
+};
+
+## Browser APIs
+
+Similar to the same problem as before, because our page is first prerendered in a Node.js environment, we can't access Browser APIs like `localStorage`, `document`, e.t.c, in the first render.
+
+Open `lib/shows.js` and replace the implementation of `useLocalStorage` with the following code:
+
+```jsx
+const getItem = name => JSON.parse(localStorage.getItem(name));
+let isPageReady = false;
+
+export function useLocalStorage(name) {
+  const [item, setState] = useState(isPageReady ? getItem(name) : null);
+  const setItem = value => {
+    if (name) {
+      localStorage.setItem(name, JSON.stringify(value));
+      setState(value);
+    }
+  };
+
+  useEffect(() => {
+    isPageReady = true;
+    if (name) {
+      setState(getItem(name));
+    }
+  }, [name]);
+
+  return [item, setItem];
+}
+```
+
+In the above changes there's a new variable called `isPageReady`, it decides if we should use `localStorage` in the first render or wait for `useEffect`, the first case would be a refresh or first page view, and the latter a navigation between prefetched pages.
+
+Now play with the app again and you should see how the cache is getting rid of all loading states, even though the delay is still there.
+
+export default ({ children }) => <Layout meta={meta}>{children}</Layout>;

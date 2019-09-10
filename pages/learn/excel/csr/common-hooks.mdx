@@ -34,36 +34,40 @@ export async function getShows(id) {
   }
 }
 
+function fetchShows(setData, id) {
+  let isMounted = true;
+
+  const fetchData = async () => {
+    const shows = await getShows(id);
+    // Only change the state if the component is still mounted after the fetch finishes
+    if (isMounted) {
+      setData(shows);
+    }
+  };
+  fetchData();
+
+  // This function will be executed by useEffect if the component is unmounted
+  return () => {
+    isMounted = false;
+  };
+}
+
 export function useShows() {
   const [shows, setShows] = useState();
 
   useEffect(() => {
-    const fetchData = async () => {
-      const shows = await getShows();
-      setShows(shows);
-    };
-    fetchData();
+    return fetchShows(setShows);
   }, []);
 
   return shows;
 }
-```
 
-`useShows()` follows the [name convention for hooks](https://reactjs.org/docs/hooks-overview.html#building-your-own-hooks), it fetches and returns the shows to any component using it.
-
-We could also do the same to get the data about a single show, add the following code to the end of the file:
-
-```jsx
 export function useShow(id) {
   const [show, setShow] = useState();
 
   useEffect(() => {
     if (id) {
-      const fetchData = async () => {
-        const show = await getShows(id);
-        setShow(show);
-      };
-      fetchData();
+      return fetchShows(setShow, id);
     }
   }, [id]);
 
@@ -71,8 +75,10 @@ export function useShow(id) {
 }
 ```
 
-`useShow` receives an `id` and uses it to fetch the show, the `useEffect` in this case has `id` as a dependency, so whenever `id` changes, it'll fetch the show, we also have a conditional to only fetch the show if there's an `id`
+`useShows` and `useShow` follow the [name convention for hooks](https://reactjs.org/docs/hooks-overview.html#building-your-own-hooks), they fetch and return shows to any component using them.
 
-Our new hooks are ready, in the next step we'll add them to the pages, you can also to do it yourself before continuing with the next step.
+`useShow` receives an `id` and uses it to fetch the show, it also has `id` as a dependency, so whenever `id` changes it will fetch the show. We also have a conditional to only fetch the show if there's an `id`.
+
+Our new hooks are ready, in the next step we'll add them to the pages, you can also do it yourself before continuing with the next step.
 
 export default ({ children }) => <Layout meta={meta}>{children}</Layout>;

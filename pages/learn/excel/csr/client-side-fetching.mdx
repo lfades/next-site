@@ -1,0 +1,108 @@
+import Layout from '../../../../components/learn/Layout';
+import AnswerBox from '../../../../components/learn/AnswerBox';
+
+export const meta = {
+  title: 'CSR',
+  courseId: 'excel',
+  lessonId: 'csr',
+  stepId: 'client-side-fetching',
+  question: {
+    answers: [
+      'The page rendered a different show',
+      'The page is working as usual',
+      'An unexpected error happened',
+      'The page is stuck at Loading...'
+    ],
+    correctAnswer: 'The page is stuck at Loading...'
+  }
+};
+
+## Client Side Fetching
+
+To use our custom hooks for data fetching open `pages/index.js` and replace the content with the following:
+
+```jsx
+import Layout from '../components/MyLayout.js';
+import Link from 'next/link';
+import { useShows } from '../lib/shows.js';
+
+const Index = () => {
+  const shows = useShows();
+
+  return (
+    <Layout>
+      <h1>Batman TV Shows</h1>
+      {shows ? (
+        <ul>
+          {shows.map(show => (
+            <li key={show.id}>
+              <Link href="/p/[id]" as={`/p/${show.id}`}>
+                <a>{show.name}</a>
+              </Link>
+            </li>
+          ))}
+        </ul>
+      ) : (
+        <p>Loading...</p>
+      )}
+    </Layout>
+  );
+};
+
+export default Index;
+```
+
+Now open `pages/p/[id].js` and do the same, but with `useShow()`:
+
+```jsx
+import { useRouter } from 'next/router';
+import Layout from '../../components/MyLayout';
+import { useShow } from '../../lib/shows';
+
+const Post = () => {
+  const router = useRouter();
+  const show = useShow(router.query.id);
+
+  return (
+    <Layout>
+      {show ? (
+        <>
+          <h1>{show.name}</h1>
+          <p>{show.summary.replace(/<[/]?p>/g, '')}</p>
+          <img src={show.image.medium} />
+        </>
+      ) : (
+        <p>Loading...</p>
+      )}
+    </Layout>
+  );
+};
+
+export default Post;
+```
+
+Navigations should feel very different now and you shouldn't see any kind of delay between navigations.
+
+Let's do a small change, open `lib/shows.js` and replace the `useShow()` hook with the following:
+
+```jsx
+export function useShow(id) {
+  const [show, setShow] = useState();
+
+  console.log('id:', id);
+
+  useEffect(() => {
+    if (id) {
+      return fetchShows(setShow, id);
+    }
+  }, []);
+
+  return show;
+}
+```
+
+2 changes were introduced, we added a `console.log` for the `id` and removed `id` from the dependencies in `useEffect`.
+
+Now if you go to any of the shows (e.g http://localhost:3000/p/975), and refresh the page, what can you notice?
+
+export default ({ children }) => <Layout meta={meta}>{children}</Layout>;
