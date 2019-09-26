@@ -10,7 +10,7 @@ export const meta = {
 
 ## Browser APIs
 
-Similar to the same problem as before, because our page is first prerendered in a Node.js environment, we can't access Browser APIs like `localStorage`, `document`, e.t.c, in the first render.
+Similar to the same problem as before, because our page is first prerendered in a Node.js environment, we can't access browser APIs like `localStorage`, `document`, e.t.c, in the first render.
 
 Open `lib/shows.js` and replace the implementation of `useLocalStorage` with the following code:
 

@@ -11,8 +11,8 @@ export const meta = {
 
 Route navigations were slow after introducing a delay, that's because the page won't be rendered until `getInitialProps` has ended.
 
-The user has to wait a long time because a data fetch has not finished, and can end with the conclusion that the site is slow, this is especially harmful in the case of slow connections
+The user has to wait a long time because a data fetch has not finished, and can end with the conclusion that the site is slow, this is especially harmful in the case of slow connections.
 
-What can we do to fix the above issue? Switch to a client side fetch!
+What can we do to fix the above issue? Switch to a client-side fetch!
 
 export default ({ children }) => <Layout meta={meta}>{children}</Layout>;
