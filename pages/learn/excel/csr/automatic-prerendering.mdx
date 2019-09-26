@@ -21,7 +21,7 @@ id: '975';
 
 the id is `undefined` in the first render but then it changes to `975`, which is the id for http://localhost:3000/p/975.
 
-This happens because of [Automatic Prerendering](https://nextjs.org/docs#automatic-prerendering), the page is now static and the initial HTML has no knowledge about dynamic values in the URL, like `id`, which becomes available after the first render.
+This happens because of [Automatic Prerendering](https://nextjs.org/docs#automatic-prerendering), the page is static and the initial HTML has no knowledge about dynamic values in the URL, like `id`, which becomes available after the first render.
 
 And why is `useEffect` not fetching the data after the id is available? because in order to do that we need to include it to the dependencies, in the same way we had it before.
 
