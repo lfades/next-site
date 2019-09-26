@@ -6,7 +6,7 @@ export const meta = {
   lessonId: 'csr'
 };
 
-Next.js is server rendered by default, meaning your code will not always run in a browser. This is specially true for pages using `getInitialProps`, which will be rendered in your server first before sending the HTML to the browser
+Next.js server-side renders your pages. When a page has `getInitialProps` this is done in each request, when it doesn't we are able to server-side render it once and reuse that result for each request. During this server-side render certain browser APIs are not available.
 
 This lesson will focus on understanding the way React works in both environments (server and browser).
 
