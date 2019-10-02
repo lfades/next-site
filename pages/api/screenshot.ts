@@ -21,9 +21,9 @@ const showcases = mapping as {
 
 export default async function screenshot(req: NextApiRequest, res: NextApiResponse) {
   try {
-    const { showcaseId } = req.query;
+    const { showcaseId, size } = req.query;
 
-    if (Array.isArray(showcaseId)) {
+    if (Array.isArray(showcaseId) || Array.isArray(size)) {
       return res.status(400).json({ error: { code: 'bad_request' } });
     }
 
@@ -56,7 +56,8 @@ export default async function screenshot(req: NextApiRequest, res: NextApiRespon
       disableAnimations: false,
       waitUntil: 'load',
       type: 'jpeg',
-      deviceScaleFactor: 2,
+      // 2 = 4K, 0.4 = 768 * 432
+      deviceScaleFactor: size === 'small' ? 0.4 : 2,
       // Wait for slow sites (and their fancy but slow animations)
       waitFor: 4000,
       width: 1920,
