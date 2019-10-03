@@ -82,7 +82,10 @@ export default async function screenshot(req: NextApiRequest, res: NextApiRespon
           // Wait for slow sites (and their fancy but slow animations)
           waitFor: 5000,
           width: 1920,
-          height: 1080
+          height: 1080,
+          // Cache the images for 31 days, the endpoint already has a cache of 2 months so this
+          // is especially intended for deployments in new PRs
+          ttl: 'max'
         });
 
         if (status !== 'success') {
