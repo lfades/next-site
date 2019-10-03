@@ -63,40 +63,43 @@ export default async function screenshot(req: NextApiRequest, res: NextApiRespon
       });
     }
 
-    let screenshotUrl: string;
+    let screenshotUrl = 'http://localhost:3000/static/images/showcases/404.png';
     const mqlStart = process.hrtime();
 
+    // Only use mql in production to avoid wasting all the free requests, you can change this to
+    // test it on localhost, be aware that a single request to /showcases can take all your requests
     if (process.env.NODE_ENV === 'production') {
-      const { status, data } = await mql(showcase.link, {
-        apiKey: process.env.MICROLINK_API_KEY,
-        screenshot: true,
-        meta: false,
-        // Some sites are very fancy and even their backgrounds are animations
-        disableAnimations: false,
-        waitUntil: 'load',
-        type: 'jpeg',
-        deviceScaleFactor: getScaleFactor(size),
-        // Wait for slow sites (and their fancy but slow animations)
-        waitFor: 4000,
-        width: 1920,
-        height: 1080
-      });
-
-      if (status !== 'success') {
-        return res.status(403).send({
-          error: { code: 'screenshot_failed', message: 'Screenshot failed' }
+      try {
+        const { status, data } = await mql(showcase.link, {
+          apiKey: process.env.MICROLINK_API_KEY,
+          screenshot: true,
+          meta: false,
+          // Some sites are very fancy and even their backgrounds are animations
+          disableAnimations: false,
+          waitUntil: 'load',
+          type: 'jpeg',
+          deviceScaleFactor: getScaleFactor(size),
+          // Wait for slow sites (and their fancy but slow animations)
+          waitFor: 4000,
+          width: 1920,
+          height: 1080
         });
-      }
 
-      screenshotUrl = data.screenshot.url;
-    } else {
-      screenshotUrl = 'http://localhost:3000/static/images/showcases/404.png';
+        if (status !== 'success') {
+          return res.status(403).send({
+            error: { code: 'screenshot_failed', message: 'Screenshot failed' }
+          });
+        }
+
+        screenshotUrl = data.screenshot.url;
+      } catch (error) {
+        // In the case of an error with mql, log the error and use the default image
+        console.error(error);
+      }
     }
 
     const mqlTime = process.hrtime(mqlStart);
-
     const pipeStart = process.hrtime();
-    // const screenshotUrl = data.screenshot.url;
     const screenshot = await fetch(screenshotUrl);
     const contentType = screenshot.headers.get('content-type');
     const contentLength = screenshot.headers.get('content-length');
