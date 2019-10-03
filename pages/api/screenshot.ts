@@ -80,7 +80,7 @@ export default async function screenshot(req: NextApiRequest, res: NextApiRespon
           type: 'jpeg',
           deviceScaleFactor: getScaleFactor(size),
           // Wait for slow sites (and their fancy but slow animations)
-          waitFor: 4000,
+          waitFor: 5000,
           width: 1920,
           height: 1080
         });
