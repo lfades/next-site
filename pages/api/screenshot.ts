@@ -1,3 +1,5 @@
+import fs from 'fs';
+import { join } from 'path';
 import { NextApiRequest, NextApiResponse } from 'next';
 import nodeFetch from 'node-fetch';
 import zeitFetch from '@zeit/fetch';
@@ -18,6 +20,20 @@ const showcases = mapping as {
       }
     | undefined;
 };
+
+function getScaleFactor(size: string) {
+  switch (size) {
+    // 768 x 432
+    case 'small':
+      return 0.4;
+    // 1920 x 1080
+    case 'medium':
+      return 1;
+    // 4K
+    default:
+      return 2;
+  }
+}
 
 export default async function screenshot(req: NextApiRequest, res: NextApiResponse) {
   try {
@@ -47,32 +63,40 @@ export default async function screenshot(req: NextApiRequest, res: NextApiRespon
       });
     }
 
+    let screenshotUrl: string;
     const mqlStart = process.hrtime();
-    const { status, data } = await mql(showcase.link, {
-      apiKey: process.env.MICROLINK_API_KEY,
-      screenshot: true,
-      meta: false,
-      // Some sites are very fancy and even their backgrounds are animations
-      disableAnimations: false,
-      waitUntil: 'load',
-      type: 'jpeg',
-      // 2 = 4K, 0.4 = 768 * 432
-      deviceScaleFactor: size === 'small' ? 0.4 : 2,
-      // Wait for slow sites (and their fancy but slow animations)
-      waitFor: 4000,
-      width: 1920,
-      height: 1080
-    });
-    const mqlTime = process.hrtime(mqlStart);
 
-    if (status !== 'success') {
-      return res.status(403).send({
-        error: { code: 'screenshot_failed', message: 'Screenshot failed' }
+    if (process.env.NODE_ENV === 'production') {
+      const { status, data } = await mql(showcase.link, {
+        apiKey: process.env.MICROLINK_API_KEY,
+        screenshot: true,
+        meta: false,
+        // Some sites are very fancy and even their backgrounds are animations
+        disableAnimations: false,
+        waitUntil: 'load',
+        type: 'jpeg',
+        deviceScaleFactor: getScaleFactor(size),
+        // Wait for slow sites (and their fancy but slow animations)
+        waitFor: 4000,
+        width: 1920,
+        height: 1080
       });
+
+      if (status !== 'success') {
+        return res.status(403).send({
+          error: { code: 'screenshot_failed', message: 'Screenshot failed' }
+        });
+      }
+
+      screenshotUrl = data.screenshot.url;
+    } else {
+      screenshotUrl = 'http://localhost:3000/static/images/showcases/404.jpg';
     }
 
+    const mqlTime = process.hrtime(mqlStart);
+
     const pipeStart = process.hrtime();
-    const screenshotUrl = data.screenshot.url;
+    // const screenshotUrl = data.screenshot.url;
     const screenshot = await fetch(screenshotUrl);
     const contentType = screenshot.headers.get('content-type');
     const contentLength = screenshot.headers.get('content-length');

@@ -72,12 +72,12 @@ export default () => {
         `}</style>
         <div className="overlay" />
         <div className="slides">
-          {DATA.slice(0, DATA.length - 1).map((item, i) => {
+          {DATA.slice(0, DATA.length - 1).map(item => {
             return (
-              <div className="slide" key={`thumbnail-${i}`}>
+              <div className="slide" key={`thumbnail-${item.internalUrl}`}>
                 <Img
-                  src={item.src.replace('/showcases/', '/showcase-thumbnails/')}
-                  alt={`Showcase ${i}`}
+                  src={`/api/screenshot?showcaseId=${item.internalUrl}&size=small`}
+                  alt={`Showcase ${item.title}`}
                   height={imgHeight}
                   width={imgWidth}
                   layout="responsive"
@@ -168,7 +168,7 @@ export default () => {
             const top = z * (margin + 5);
             return (
               <Link
-                key={`showcase-${i}`}
+                key={`showcase-${item.internalUrl}`}
                 href={`/showcase?from=click&item=${item.internalUrl}`}
                 as={`/showcase/${item.internalUrl}`}
               >
@@ -182,7 +182,7 @@ export default () => {
                 >
                   <Img
                     className="no-drag"
-                    src={item.src.replace('/showcases/', '/showcase-thumbnails/')}
+                    src={`/api/screenshot?showcaseId=${item.internalUrl}&size=small`}
                     style={{
                       opacity: z === 0 ? 1 : undefined
                     }}
