@@ -90,7 +90,7 @@ export default async function screenshot(req: NextApiRequest, res: NextApiRespon
 
       screenshotUrl = data.screenshot.url;
     } else {
-      screenshotUrl = 'http://localhost:3000/static/images/showcases/404.jpg';
+      screenshotUrl = 'http://localhost:3000/static/images/showcases/404.png';
     }
 
     const mqlTime = process.hrtime(mqlStart);
