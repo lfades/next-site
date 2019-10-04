@@ -6,6 +6,7 @@ import zeitFetch from '@zeit/fetch';
 import mql from '@microlink/mql';
 import { mapping } from '../../showcase-manifest';
 
+const BACKEND_URL = process.env.BACKEND_URL || 'http://localhost:3000';
 const fetch = zeitFetch(nodeFetch);
 const showcases = mapping as {
   [id: string]:
@@ -13,8 +14,6 @@ const showcases = mapping as {
         title: string;
         link: string;
         src?: string;
-        width: number;
-        height: number;
         internalUrl: string;
         tags?: string[];
       }
@@ -63,7 +62,7 @@ export default async function screenshot(req: NextApiRequest, res: NextApiRespon
       });
     }
 
-    let screenshotUrl = 'http://localhost:3000/static/images/showcases/404.png';
+    let screenshotUrl: string | undefined;
     const mqlStart = process.hrtime();
 
     // Only use mql in production to avoid wasting all the free requests, you can change this to
@@ -80,9 +79,11 @@ export default async function screenshot(req: NextApiRequest, res: NextApiRespon
           type: 'jpeg',
           deviceScaleFactor: getScaleFactor(size),
           // Wait for slow sites (and their fancy but slow animations)
-          waitFor: 5000,
+          waitFor: 3000,
           width: 1920,
           height: 1080,
+          // TEMPORAL
+          force: true,
           // Cache the images for 31 days, the endpoint already has a cache of 2 months so this
           // is especially intended for deployments in new PRs
           ttl: 'max'
@@ -99,6 +100,11 @@ export default async function screenshot(req: NextApiRequest, res: NextApiRespon
         // In the case of an error with mql, log the error and use the default image
         console.error(error);
       }
+    }
+
+    if (!screenshotUrl) {
+      const src = showcase.src || '/static/images/showcases/404.png';
+      screenshotUrl = BACKEND_URL + src;
     }
 
     const mqlTime = process.hrtime(mqlStart);
