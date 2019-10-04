@@ -12,7 +12,7 @@ const showcases = mapping as {
     | {
         title: string;
         link: string;
-        src: string;
+        src?: string;
         width: number;
         height: number;
         internalUrl: string;
