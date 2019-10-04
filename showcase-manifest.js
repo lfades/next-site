@@ -107,7 +107,10 @@ const sortOrder = [
   'shakeshack',
   'coop',
   'mprnews',
-  'thehhub'
+  'thehhub',
+  'realtor',
+  'leafly',
+  'playstation'
 ];
 
 const mapping = {
@@ -980,6 +983,30 @@ const mapping = {
     height: 2200,
     internalUrl: 'thehhub',
     tags: ['creative']
+  },
+  realtor: {
+    title: 'realtor.com',
+    link: 'https://www.realtor.com',
+    width: 3836,
+    height: 2200,
+    internalUrl: 'realtor',
+    tags: ['e-commerce']
+  },
+  leafly: {
+    title: 'Leafly',
+    link: 'https://www.leafly.com',
+    width: 3836,
+    height: 2200,
+    internalUrl: 'leafly',
+    tags: ['e-commerce']
+  },
+  playstation: {
+    title: 'PlayStation Competition Center',
+    link: 'https://compete.playstation.com/',
+    width: 3836,
+    height: 2200,
+    internalUrl: 'playstation',
+    tags: ['entertainment']
   }
 };
 
