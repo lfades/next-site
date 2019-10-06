@@ -127,14 +127,17 @@ export default async function screenshot(req: NextApiRequest, res: NextApiRespon
 
     res.on('finish', () => {
       const pipeTime = process.hrtime(pipeStart);
-      console.info(
-        'generated screenshot for %s, mql time: %ds%dms, pipe image time: %ds%dms',
-        screenshotUrl,
-        mqlTime[0],
-        mqlTime[1] / 1000000,
-        pipeTime[0],
-        pipeTime[1] / 1000000
-      );
+
+      if (MQL_ENABLED) {
+        console.info(
+          'generated screenshot for %s, mql time: %ds%dms, pipe image time: %ds%dms',
+          screenshotUrl,
+          mqlTime[0],
+          mqlTime[1] / 1000000,
+          pipeTime[0],
+          pipeTime[1] / 1000000
+        );
+      }
     });
   } catch (error) {
     console.error(error);
