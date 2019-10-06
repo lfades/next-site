@@ -4,20 +4,21 @@ import zeitFetch from '@zeit/fetch';
 import mql from '@microlink/mql';
 import { mapping } from '../../showcase-manifest';
 
+type Showcase = {
+  title: string;
+  link: string;
+  src: string;
+  srcFallback?: boolean;
+  internalUrl: string;
+  tags?: string[];
+};
+
+const MQL_ENABLED = false;
 const BACKEND_URL =
   process.env.NODE_ENV === 'production' ? process.env.BACKEND_URL : 'http://localhost:3000';
 const fetch = zeitFetch(nodeFetch);
 const showcases = mapping as {
-  [id: string]:
-    | {
-        title: string;
-        link: string;
-        src?: string;
-        srcFallback?: boolean;
-        internalUrl: string;
-        tags?: string[];
-      }
-    | undefined;
+  [id: string]: Showcase | undefined;
 };
 
 function getScaleFactor(size: string) {
@@ -67,34 +68,40 @@ export default async function screenshot(req: NextApiRequest, res: NextApiRespon
 
     // Only use mql in production to avoid wasting all the free requests, you can change this to
     // test it on localhost, be aware that a single request to /showcases can take all your requests
-    if (process.env.NODE_ENV === 'production' && (showcase.srcFallback || !showcase.src)) {
-      try {
-        const { status, data } = await mql(showcase.link, {
-          apiKey: process.env.MICROLINK_API_KEY,
-          screenshot: true,
-          meta: false,
-          // Some sites are very fancy and even their backgrounds are animations
-          disableAnimations: false,
-          waitUntil: 'load',
-          type: 'jpeg',
-          deviceScaleFactor: getScaleFactor(size),
-          width: 1920,
-          height: 1080
-        });
+    if (process.env.NODE_ENV === 'production') {
+      if (MQL_ENABLED && (showcase.srcFallback || !showcase.src)) {
+        try {
+          const { status, data } = await mql(showcase.link, {
+            apiKey: process.env.MICROLINK_API_KEY,
+            screenshot: true,
+            meta: false,
+            // Some sites are very fancy and even their backgrounds are animations
+            disableAnimations: false,
+            waitUntil: 'load',
+            type: 'jpeg',
+            deviceScaleFactor: getScaleFactor(size),
+            width: 1920,
+            height: 1080
+          });
 
-        if (status !== 'success') {
-          throw new Error(`Screnshot failed for ${showcase.link}`);
+          if (status !== 'success') {
+            throw new Error(`Screnshot failed for ${showcase.link}`);
+          }
+
+          screenshotUrl = data.screenshot.url;
+        } catch (error) {
+          // In the case of an error with mql, log the error and use the default image
+          console.error(error);
         }
-
-        screenshotUrl = data.screenshot.url;
-      } catch (error) {
-        // In the case of an error with mql, log the error and use the default image
-        console.error(error);
       }
     }
 
     if (!screenshotUrl) {
-      const src = showcase.src || '/static/images/showcases/404.png';
+      const src =
+        size === 'small'
+          ? showcase.src.replace('/showcases/', '/showcase-thumbnails/')
+          : showcase.src;
+
       screenshotUrl = BACKEND_URL + src;
     }
 
