@@ -304,7 +304,6 @@ const mapping = {
     title: 'Ticketmaster',
     link: 'https://www.ticketmaster.com',
     src: '/static/images/showcases/ticketmaster.jpg',
-    srcFallback: true,
     alexa: 773,
     internalUrl: 'ticketmaster',
     tags: ['e-commerce']
@@ -583,7 +582,7 @@ const mapping = {
   auth0: {
     title: 'Auth0',
     link: 'https://auth0.com',
-    src: '/static/images/showcases/showcases-03.jpg',
+    src: '/static/images/showcases/auth0.jpg',
     srcFallback: true,
     alexa: 1979,
     internalUrl: 'auth0',
@@ -672,7 +671,7 @@ const mapping = {
   sumup: {
     title: 'Sumup',
     link: 'https://sumup.com',
-    src: '/static/images/showcases/showcases-14.jpg',
+    src: '/static/images/showcases/sumup.jpg',
     alexa: 19891,
     internalUrl: 'sumup',
     tags: ['finance']
@@ -707,7 +706,7 @@ const mapping = {
   'design-better': {
     title: 'DesignBetter.co',
     link: 'https://www.designbetter.co',
-    src: '/static/images/showcases/showcases-18.jpg',
+    src: '/static/images/showcases/designbetter.jpg',
     alexa: 97014,
     internalUrl: 'design-better',
     tags: ['dev', 'creative']
@@ -867,21 +866,25 @@ const mapping = {
   realtor: {
     title: 'realtor.com',
     link: 'https://www.realtor.com',
+    src: '/static/images/showcases/realtor.jpg',
+    srcFallback: true,
     alexa: 446,
     internalUrl: 'realtor',
     tags: ['e-commerce']
   },
-  // leafly: {
-  //   title: 'Leafly',
-  //   link: 'https://www.leafly.com',
-  //   src: '/addonepls',
-  //   alexa: 5850,
-  //   internalUrl: 'leafly',
-  //   tags: ['e-commerce']
-  // },
+  leafly: {
+    title: 'Leafly',
+    link: 'https://www.leafly.com',
+    src: '/static/images/showcases/leafly.jpg',
+    alexa: 5850,
+    internalUrl: 'leafly',
+    tags: ['e-commerce']
+  },
   playstation: {
     title: 'PlayStation Competition Center',
     link: 'https://compete.playstation.com/',
+    src: '/static/images/showcases/playstation.jpg',
+    srcFallback: true,
     alexa: 584,
     internalUrl: 'playstation',
     tags: ['entertainment']
