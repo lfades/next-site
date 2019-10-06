@@ -13,6 +13,7 @@ const showcases = mapping as {
         title: string;
         link: string;
         src?: string;
+        srcFallback?: boolean;
         internalUrl: string;
         tags?: string[];
       }
@@ -66,7 +67,7 @@ export default async function screenshot(req: NextApiRequest, res: NextApiRespon
 
     // Only use mql in production to avoid wasting all the free requests, you can change this to
     // test it on localhost, be aware that a single request to /showcases can take all your requests
-    if (process.env.NODE_ENV === 'production' && !showcase.src) {
+    if (process.env.NODE_ENV === 'production' && (showcase.srcFallback || !showcase.src)) {
       try {
         const { status, data } = await mql(showcase.link, {
           apiKey: process.env.MICROLINK_API_KEY,
@@ -77,17 +78,12 @@ export default async function screenshot(req: NextApiRequest, res: NextApiRespon
           waitUntil: 'load',
           type: 'jpeg',
           deviceScaleFactor: getScaleFactor(size),
-          force: true,
-          // Wait for slow sites (and their fancy but slow animations)
-          // waitFor: 1000,
           width: 1920,
           height: 1080
         });
 
         if (status !== 'success') {
-          return res.status(403).send({
-            error: { code: 'screenshot_failed', message: 'Screenshot failed' }
-          });
+          throw new Error(`Screnshot failed for ${showcase.link}`);
         }
 
         screenshotUrl = data.screenshot.url;

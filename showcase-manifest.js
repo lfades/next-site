@@ -6,7 +6,8 @@ const mapping = {
   typeform: {
     title: 'Typeform',
     link: 'https://www.typeform.com',
-    // src: '/static/images/showcases/typeform.jpg',
+    src: '/static/images/showcases/typeform.jpg',
+    srcFallback: true,
     alexa: 1029,
     internalUrl: 'typeform',
     tags: ['creative']
@@ -14,7 +15,8 @@ const mapping = {
   blendle: {
     title: 'Blendle',
     link: 'https://blendle.com',
-    // src: '/static/images/showcases/blendle.jpg',
+    src: '/static/images/showcases/blendle.jpg',
+    srcFallback: true,
     alexa: 126711,
     internalUrl: 'blendle',
     tags: ['news']
@@ -22,7 +24,8 @@ const mapping = {
   hollar: {
     title: 'Hollar',
     link: 'https://www.hollar.com',
-    // src: '/static/images/showcases/hollar.jpg',
+    src: '/static/images/showcases/hollar.jpg',
+    srcFallback: true,
     alexa: 79897,
     internalUrl: 'hollar',
     tags: ['e-commerce']
@@ -30,7 +33,8 @@ const mapping = {
   yicaiglobal: {
     title: 'Yicai Global',
     link: 'https://yicaiglobal.com',
-    // src: '/static/images/showcases/yicaiglobal.jpg',
+    src: '/static/images/showcases/yicaiglobal.jpg',
+    srcFallback: true,
     alexa: 303541,
     internalUrl: 'yicaiglobal',
     tags: ['news']
@@ -38,7 +42,8 @@ const mapping = {
   artsmia: {
     title: 'Minneapolis Institute of Art',
     link: 'https://new.artsmia.org',
-    // src: '/static/images/showcases/artsmia.jpg',
+    src: '/static/images/showcases/artsmia.jpg',
+    srcFallback: true,
     alexa: 230509,
     internalUrl: 'artsmia',
     tags: ['news']
@@ -46,7 +51,8 @@ const mapping = {
   tvpublica: {
     title: 'Televisión Pública Argentina',
     link: 'https://www.tvpublica.com.ar',
-    // src: '/static/images/showcases/tvpublica.jpg',
+    src: '/static/images/showcases/tvpublica.jpg',
+    srcFallback: true,
     alexa: 56932,
     internalUrl: 'tvpublica',
     tags: ['news']
@@ -54,7 +60,8 @@ const mapping = {
   suburbia: {
     title: 'Suburbia',
     link: 'https://www.suburbia.com.mx',
-    // src: '/static/images/showcases/suburbia.jpg',
+    src: '/static/images/showcases/suburbia.jpg',
+    srcFallback: true,
     alexa: 71619,
     internalUrl: 'suburbia',
     tags: ['e-commerce']
@@ -62,7 +69,8 @@ const mapping = {
   att: {
     title: 'AT&T',
     link: 'https://www.att.com',
-    // src: '/static/images/showcases/att.jpg',
+    src: '/static/images/showcases/att.jpg',
+    srcFallback: true,
     alexa: 486,
     internalUrl: 'att',
     tags: ['e-commerce', 'entertainment']
@@ -70,7 +78,8 @@ const mapping = {
   ticketswap: {
     title: 'TicketSwap',
     link: 'https://www.ticketswap.uk',
-    // src: '/static/images/showcases/ticketswap.jpg',
+    src: '/static/images/showcases/ticketswap.jpg',
+    srcFallback: true,
     alexa: 353790,
     internalUrl: 'ticketswap',
     tags: ['e-commerce']
@@ -94,7 +103,8 @@ const mapping = {
   dicefm: {
     title: 'DICE',
     link: 'https://dice.fm',
-    // src: '/static/images/showcases/dicefm.jpg',
+    src: '/static/images/showcases/dicefm.jpg',
+    srcFallback: true,
     alexa: 97926,
     internalUrl: 'dicefm',
     tags: ['e-commerce']
@@ -102,7 +112,8 @@ const mapping = {
   nilefm: {
     title: 'NileFM',
     link: 'https://nilefm.com',
-    // src: '/static/images/showcases/nilefmonline.jpg',
+    src: '/static/images/showcases/nilefmonline.jpg',
+    srcFallback: true,
     alexa: 408918,
     internalUrl: 'nilefm',
     tags: ['entertainment']
@@ -110,7 +121,8 @@ const mapping = {
   giveindia: {
     title: 'GiveIndia',
     link: 'https://www.giveindia.org',
-    // src: '/static/images/showcases/giveindia.jpg',
+    src: '/static/images/showcases/giveindia.jpg',
+    srcFallback: true,
     alexa: 84640,
     internalUrl: 'giveindia',
     tags: []
@@ -118,7 +130,8 @@ const mapping = {
   allvoices: {
     title: 'AllVoices',
     link: 'https://allvoices.co',
-    // src: '/static/images/showcases/allvoices.jpg',
+    src: '/static/images/showcases/allvoices.jpg',
+    srcFallback: true,
     alexa: 818074,
     internalUrl: 'allvoices',
     tags: []
@@ -126,7 +139,8 @@ const mapping = {
   onuniverse: {
     title: 'Universe',
     link: 'https://onuniverse.com',
-    // src: '/static/images/showcases/onuniverse.jpg',
+    src: '/static/images/showcases/onuniverse.jpg',
+    srcFallback: true,
     alexa: 191350,
     internalUrl: 'onuniverse',
     tags: ['creative']
@@ -134,7 +148,8 @@ const mapping = {
   theculturetrip: {
     title: 'Culture Trip',
     link: 'https://theculturetrip.com',
-    // src: '/static/images/showcases/theculturetrip.jpg',
+    src: '/static/images/showcases/theculturetrip.jpg',
+    srcFallback: true,
     alexa: 2797,
     internalUrl: 'theculturetrip',
     tags: ['entertainment']
@@ -142,7 +157,8 @@ const mapping = {
   supervielle: {
     title: 'Supervielle',
     link: 'https://www.supervielle.com.ar',
-    // src: '/static/images/showcases/supervielle.jpg',
+    src: '/static/images/showcases/supervielle.jpg',
+    srcFallback: true,
     alexa: 24638,
     internalUrl: 'supervielle',
     tags: ['finance']
@@ -150,7 +166,8 @@ const mapping = {
   twitch: {
     title: 'Twitch',
     link: 'https://m.twitch.tv',
-    // src: '/static/images/showcases/twitch.jpg',
+    src: '/static/images/showcases/twitch.jpg',
+    srcFallback: true,
     alexa: 36,
     highlighted: 1,
     internalUrl: 'twitch',
@@ -159,7 +176,8 @@ const mapping = {
   lego: {
     title: 'LEGO for Kids',
     link: 'https://www.lego.com/en-us/kids',
-    // src: '/static/images/showcases/lego.jpg',
+    src: '/static/images/showcases/lego.jpg',
+    srcFallback: true,
     alexa: 3948,
     internalUrl: 'lego',
     tags: ['entertainment', 'creative']
@@ -167,7 +185,8 @@ const mapping = {
   uber: {
     title: 'Uber Marketplace',
     link: 'https://marketplace.uber.com',
-    // src: '/static/images/showcases/uber.jpg',
+    src: '/static/images/showcases/uber.jpg',
+    srcFallback: true,
     internalUrl: 'uber',
     alexa: 800,
     tags: []
@@ -175,7 +194,8 @@ const mapping = {
   starbucksreserve: {
     title: 'Starbucks Reserve',
     link: 'https://starbucksreserve.com',
-    // src: '/static/images/showcases/starbucksreserve.jpg',
+    src: '/static/images/showcases/starbucksreserve.jpg',
+    srcFallback: true,
     alexa: 280753,
     internalUrl: 'starbucksreserve',
     tags: ['e-commerce']
@@ -183,7 +203,8 @@ const mapping = {
   'material-ui': {
     title: 'Material-UI',
     link: 'https://material-ui.com',
-    // src: '/static/images/showcases/material-ui.jpg',
+    src: '/static/images/showcases/material-ui.jpg',
+    srcFallback: true,
     alexa: 12099,
     internalUrl: 'material-ui',
     tags: ['creative']
@@ -191,7 +212,8 @@ const mapping = {
   framer: {
     title: 'Framer Store',
     link: 'https://store.framer.com',
-    // src: '/static/images/showcases/framer.jpg',
+    src: '/static/images/showcases/framer.jpg',
+    srcFallback: true,
     alexa: 50549,
     internalUrl: 'framer',
     highlighted: 2,
@@ -200,7 +222,8 @@ const mapping = {
   garticio: {
     title: 'Gartic.io',
     link: 'https://gartic.io',
-    // src: '/static/images/showcases/garticio.jpg',
+    src: '/static/images/showcases/garticio.jpg',
+    srcFallback: true,
     alexa: 33457,
     internalUrl: 'garticio',
     tags: ['entertainment', 'creative']
@@ -208,7 +231,8 @@ const mapping = {
   trip: {
     title: 'Trip.com',
     link: 'https://www.trip.com/travel-guide',
-    // src: '/static/images/showcases/trip.jpg',
+    src: '/static/images/showcases/trip.jpg',
+    srcFallback: true,
     alexa: 2123,
     internalUrl: 'trip',
     tags: ['e-commerce']
@@ -216,7 +240,8 @@ const mapping = {
   colorbox: {
     title: 'ColorBox',
     link: 'https://www.colorbox.io',
-    // src: '/static/images/showcases/colorbox.jpg',
+    src: '/static/images/showcases/colorbox.jpg',
+    srcFallback: true,
     alexa: 315118,
     internalUrl: 'colorbox',
     highlighted: 1,
@@ -225,35 +250,42 @@ const mapping = {
   inflect: {
     title: 'Inflect Global Marketplace',
     link: 'https://inflect.com',
-    // src: '/static/images/showcases/inflect.jpg',
+    src: '/static/images/showcases/inflect.jpg',
+    srcFallback: true,
     alexa: 809263,
-    internalUrl: 'inflect'
+    internalUrl: 'inflect',
+    tags: []
   },
   piesync: {
     title: 'PieSync',
     link: 'https://www.piesync.com',
-    // src: '/static/images/showcases/piesync.jpg',
+    src: '/static/images/showcases/piesync.jpg',
+    srcFallback: true,
     alexa: 74385,
-    internalUrl: 'piesync'
+    internalUrl: 'piesync',
+    tags: []
   },
   lightningdesignsystem: {
     title: 'Salesforce Lightning Design System',
     link: 'https://www.lightningdesignsystem.com',
-    // src: '/static/images/showcases/lightningdesignsystem.jpg',
+    src: '/static/images/showcases/lightningdesignsystem.jpg',
+    srcFallback: true,
     alexa: 78744,
     internalUrl: 'lightningdesignsystem',
     tags: ['creative']
   },
-  // heramerica: {
-  //   title: 'Her America',
-  //   link: 'https://www.heramerica.com',
-  //   src: '/static/images/showcases/heramerica.jpg',
-  //   internalUrl: 'heramerica'
-  // },
+  heramerica: {
+    title: 'Her America',
+    link: 'https://www.heramerica.com',
+    src: '/static/images/showcases/heramerica.jpg',
+    alexa: 99999999,
+    internalUrl: 'heramerica'
+  },
   bitscreener: {
     title: 'Bitscreener',
     link: 'https://bitscreener.com',
-    // src: '/static/images/showcases/bitscreener.jpg',
+    src: '/static/images/showcases/bitscreener.jpg',
+    srcFallback: true,
     alexa: 155844,
     internalUrl: 'bitscreener',
     tags: ['finance']
@@ -261,7 +293,8 @@ const mapping = {
   staples: {
     title: 'Staples',
     link: 'https://m.staples.com',
-    // src: '/static/images/showcases/staples.jpg',
+    src: '/static/images/showcases/staples.jpg',
+    srcFallback: true,
     alexa: 1653,
     internalUrl: 'staples',
     highlighted: 2,
@@ -270,7 +303,8 @@ const mapping = {
   ticketmaster: {
     title: 'Ticketmaster',
     link: 'https://www.ticketmaster.com',
-    // src: '/static/images/showcases/ticketmaster.jpg',
+    src: '/static/images/showcases/ticketmaster.jpg',
+    srcFallback: true,
     alexa: 773,
     internalUrl: 'ticketmaster',
     tags: ['e-commerce']
@@ -278,7 +312,8 @@ const mapping = {
   verge: {
     title: 'Verge',
     link: 'https://vergecurrency.com',
-    // src: '/static/images/showcases/verge.jpg',
+    src: '/static/images/showcases/verge.jpg',
+    srcFallback: true,
     alexa: 285029,
     internalUrl: 'verge',
     tags: ['finance']
@@ -286,7 +321,8 @@ const mapping = {
   binance: {
     title: 'Binance',
     link: 'https://www.binance.com',
-    // src: '/static/images/showcases/binance.jpg',
+    src: '/static/images/showcases/binance.jpg',
+    srcFallback: true,
     alexa: 1682,
     internalUrl: 'binance',
     highlighted: 2,
@@ -303,7 +339,8 @@ const mapping = {
   aenetworks: {
     title: 'A+E Networks',
     link: 'https://www.aenetworks.com',
-    // src: '/static/images/showcases/aenetworks.jpg',
+    src: '/static/images/showcases/aenetworks.jpg',
+    srcFallback: true,
     alexa: 156068,
     internalUrl: 'aenetworks',
     tags: ['news']
@@ -311,7 +348,8 @@ const mapping = {
   worldpopulationreview: {
     title: 'World Population Review',
     link: 'http://worldpopulationreview.com',
-    // src: '/static/images/showcases/worldpopulationreview.jpg',
+    src: '/static/images/showcases/worldpopulationreview.jpg',
+    srcFallback: true,
     alexa: 6881,
     internalUrl: 'worldpopulationreview',
     tags: ['news']
@@ -319,7 +357,8 @@ const mapping = {
   underbelly: {
     title: 'Underbelly',
     link: 'https://underbelly.is',
-    // src: '/static/images/showcases/underbelly.jpg',
+    src: '/static/images/showcases/underbelly.jpg',
+    srcFallback: true,
     alexa: 1550898,
     internalUrl: 'underbelly',
     tags: ['creative']
@@ -327,7 +366,8 @@ const mapping = {
   'syntax.fm': {
     title: 'Syntax',
     link: 'https://syntax.fm',
-    // src: '/static/images/showcases/syntax.fm.jpg',
+    src: '/static/images/showcases/syntax.fm.jpg',
+    srcFallback: true,
     alexa: 422189,
     internalUrl: 'syntax.fm',
     tags: ['dev', 'creative']
@@ -335,7 +375,8 @@ const mapping = {
   institchu: {
     title: 'InStitchu',
     link: 'https://www.institchu.com',
-    // src: '/static/images/showcases/institchu.jpg',
+    src: '/static/images/showcases/institchu.jpg',
+    srcFallback: true,
     alexa: 268477,
     internalUrl: 'institchu',
     tags: ['e-commerce']
@@ -343,7 +384,8 @@ const mapping = {
   nteract: {
     title: 'nteract',
     link: 'https://nteract.io',
-    // src: '/static/images/showcases/nteract.jpg',
+    src: '/static/images/showcases/nteract.jpg',
+    srcFallback: true,
     alexa: 1245645,
     internalUrl: 'nteract',
     tags: ['creative']
@@ -351,7 +393,8 @@ const mapping = {
   'square-enix-games': {
     title: 'Square Enix',
     link: 'https://square-enix-games.com',
-    // src: '/static/images/showcases/square-enix-games.jpg',
+    src: '/static/images/showcases/square-enix-games.jpg',
+    srcFallback: true,
     alexa: 15656,
     internalUrl: 'square-enix-games',
     highlighted: 1,
@@ -360,7 +403,8 @@ const mapping = {
   docker: {
     title: 'Docker',
     link: 'https://success.docker.com',
-    // src: '/static/images/showcases/docker.jpg',
+    src: '/static/images/showcases/docker.jpg',
+    srcFallback: true,
     alexa: 2861,
     internalUrl: 'docker',
     tags: ['dev']
@@ -368,7 +412,8 @@ const mapping = {
   plotly: {
     title: 'Plotly',
     link: 'https://plot.ly',
-    // src: '/static/images/showcases/plotly.jpg',
+    src: '/static/images/showcases/plotly.jpg',
+    srcFallback: true,
     alexa: 16141,
     internalUrl: 'plotly',
     tags: ['creative']
@@ -376,7 +421,8 @@ const mapping = {
   deliveroo: {
     title: 'Deliveroo',
     link: 'https://deliveroo.co.uk',
-    // src: '/static/images/showcases/deliveroo.jpg',
+    src: '/static/images/showcases/deliveroo.jpg',
+    srcFallback: true,
     alexa: 11556,
     internalUrl: 'deliveroo',
     tags: ['e-commerce']
@@ -384,7 +430,8 @@ const mapping = {
   eurostar: {
     title: 'Eurostar',
     link: 'https://hotels.eurostar.com/uk-en/paris',
-    // src: '/static/images/showcases/eurostar.jpg',
+    src: '/static/images/showcases/eurostar.jpg',
+    srcFallback: true,
     alexa: 23074,
     internalUrl: 'eurostar',
     tags: ['e-commerce']
@@ -392,7 +439,8 @@ const mapping = {
   stv: {
     title: 'STV',
     link: 'https://stv.tv',
-    // src: '/static/images/showcases/stv.jpg',
+    src: '/static/images/showcases/stv.jpg',
+    srcFallback: true,
     alexa: 41728,
     internalUrl: 'stv',
     tags: ['entertainment']
@@ -400,7 +448,8 @@ const mapping = {
   midrive: {
     title: 'Midrive',
     link: 'https://midrive.com',
-    // src: '/static/images/showcases/midrive.jpg',
+    src: '/static/images/showcases/midrive.jpg',
+    srcFallback: true,
     alexa: 497657,
     internalUrl: 'midrive',
     tags: ['e-commerce']
@@ -416,7 +465,8 @@ const mapping = {
   givecrypto: {
     title: 'GiveCrypto',
     link: 'https://www.givecrypto.org',
-    // src: '/static/images/showcases/givecrypto.jpg',
+    src: '/static/images/showcases/givecrypto.jpg',
+    srcFallback: true,
     alexa: 1252066,
     internalUrl: 'givecrypto',
     tags: ['finance']
@@ -424,7 +474,8 @@ const mapping = {
   'satoshis.place': {
     title: "Satoshi's Place",
     link: 'https://satoshis.place',
-    // src: '/static/images/showcases/satoshis.place.jpg',
+    src: '/static/images/showcases/satoshis.place.jpg',
+    srcFallback: true,
     alexa: 3061332,
     internalUrl: 'satoshis.place',
     tags: ['entertainment']
@@ -432,7 +483,8 @@ const mapping = {
   'repl.it': {
     title: 'repl.it',
     link: 'https://repl.it',
-    // src: '/static/images/showcases/repl.it.jpg',
+    src: '/static/images/showcases/repl.it.jpg',
+    srcFallback: true,
     alexa: 7074,
     internalUrl: 'repl.it',
     tags: ['dev']
@@ -440,7 +492,8 @@ const mapping = {
   'styled-components': {
     title: 'styled-components',
     link: 'https://www.styled-components.com',
-    // src: '/static/images/showcases/styled-components.jpg',
+    src: '/static/images/showcases/styled-components.jpg',
+    srcFallback: true,
     alexa: 59991,
     internalUrl: 'styled-components',
     tags: ['dev']
@@ -448,7 +501,8 @@ const mapping = {
   'tencent-news': {
     title: 'Tencent News',
     link: 'https://xw.qq.com',
-    // src: '/static/images/showcases/tencentnews.jpg',
+    src: '/static/images/showcases/tencentnews.jpg',
+    srcFallback: true,
     alexa: 6,
     internalUrl: 'tencent-news',
     highlighted: 2,
@@ -457,7 +511,8 @@ const mapping = {
   jet: {
     title: 'Jet',
     link: 'https://jet.com',
-    // src: '/static/images/showcases/jet.jpg',
+    src: '/static/images/showcases/jet.jpg',
+    srcFallback: true,
     alexa: 15822,
     internalUrl: 'jet',
     highlighted: 1,
@@ -466,7 +521,8 @@ const mapping = {
   idean: {
     title: 'Idean',
     link: 'https://www.idean.com',
-    // src: '/static/images/showcases/idean.jpg',
+    src: '/static/images/showcases/idean.jpg',
+    srcFallback: true,
     alexa: 590539,
     internalUrl: 'idean',
     tags: ['creative']
@@ -474,7 +530,8 @@ const mapping = {
   'magic-leap': {
     title: 'Magic Leap',
     link: 'https://magicleap.com',
-    // src: '/static/images/showcases/showcases-00.jpg',
+    src: '/static/images/showcases/showcases-00.jpg',
+    srcFallback: true,
     alexa: 92873,
     internalUrl: 'magic-leap',
     highlighted: 1,
@@ -483,7 +540,8 @@ const mapping = {
   marvel: {
     title: 'Marvel',
     link: 'https://www.marvel.com',
-    // src: '/static/images/showcases/marvel.jpg',
+    src: '/static/images/showcases/marvel.jpg',
+    srcFallback: true,
     alexa: 8665,
     internalUrl: 'marvel',
     tags: ['entertainment']
@@ -491,14 +549,16 @@ const mapping = {
   nike: {
     title: 'Nike',
     link: 'https://www.nike.com/help',
-    // src: '/static/images/showcases/nike.jpg',
+    src: '/static/images/showcases/nike.jpg',
+    srcFallback: true,
     alexa: 480,
     internalUrl: 'nike'
   },
   'boosted-boards': {
     title: 'Boosted',
     link: 'http://boostedboards.com',
-    // src: '/static/images/showcases/boosted.jpg',
+    src: '/static/images/showcases/boosted.jpg',
+    srcFallback: true,
     alexa: 40796,
     internalUrl: 'boosted-boards',
     tags: ['e-commerce']
@@ -506,7 +566,8 @@ const mapping = {
   eaze: {
     title: 'Eaze',
     link: 'https://www.eaze.com',
-    // src: '/static/images/showcases/showcases-01.jpg',
+    src: '/static/images/showcases/showcases-01.jpg',
+    srcFallback: true,
     alexa: 24869,
     internalUrl: 'eaze',
     tags: ['e-commerce']
@@ -522,7 +583,8 @@ const mapping = {
   auth0: {
     title: 'Auth0',
     link: 'https://auth0.com',
-    // src: '/static/images/showcases/showcases-03.jpg',
+    src: '/static/images/showcases/showcases-03.jpg',
+    srcFallback: true,
     alexa: 1979,
     internalUrl: 'auth0',
     tags: ['dev']
@@ -530,7 +592,8 @@ const mapping = {
   scale: {
     title: 'Scale',
     link: 'https://scale.com',
-    // src: '/static/images/showcases/showcases-04.jpg',
+    src: '/static/images/showcases/showcases-04.jpg',
+    srcFallback: true,
     alexa: 104639,
     internalUrl: 'scale',
     tags: ['creative']
@@ -538,7 +601,8 @@ const mapping = {
   'elton-john': {
     title: 'Elton John',
     link: 'https://www.eltonjohn.com',
-    // src: '/static/images/showcases/showcases-05.jpg',
+    src: '/static/images/showcases/showcases-05.jpg',
+    srcFallback: true,
     alexa: 209465,
     internalUrl: 'elton-john',
     tags: ['creative', 'entertainment']
@@ -546,7 +610,8 @@ const mapping = {
   'open-collective': {
     title: 'Open Collective',
     link: 'https://opencollective.com',
-    // src: '/static/images/showcases/showcases-06.jpg',
+    src: '/static/images/showcases/showcases-06.jpg',
+    srcFallback: true,
     alexa: 48192,
     internalUrl: 'open-collective',
     tags: ['creative']
@@ -554,7 +619,8 @@ const mapping = {
   a24: {
     title: 'A24',
     link: 'https://www.a24.com',
-    // src: '/static/images/showcases/showcases-07.jpg',
+    src: '/static/images/showcases/showcases-07.jpg',
+    srcFallback: true,
     alexa: 34393,
     internalUrl: 'a24',
     tags: ['news']
@@ -570,7 +636,8 @@ const mapping = {
   zeit: {
     title: 'ZEIT',
     link: 'https://zeit.co',
-    // src: '/static/images/showcases/showcases-09.jpg',
+    src: '/static/images/showcases/showcases-09.jpg',
+    srcFallback: true,
     alexa: 34585,
     internalUrl: 'zeit',
     tags: ['dev', 'creative']
@@ -578,7 +645,8 @@ const mapping = {
   avocode: {
     title: 'Avocode',
     link: 'https://avocode.com',
-    // src: '/static/images/showcases/avocode.jpg',
+    src: '/static/images/showcases/avocode.jpg',
+    srcFallback: true,
     alexa: 48264,
     internalUrl: 'avocode',
     tags: ['creative']
@@ -586,7 +654,8 @@ const mapping = {
   iota: {
     title: 'IOTA',
     link: 'https://www.iota.org',
-    // src: '/static/images/showcases/iota.jpg',
+    src: '/static/images/showcases/iota.jpg',
+    srcFallback: true,
     alexa: 105797,
     internalUrl: 'iota',
     tags: ['dev', 'finance']
@@ -594,7 +663,8 @@ const mapping = {
   expo: {
     title: 'Expo',
     link: 'https://expo.io',
-    // src: '/static/images/showcases/showcases-13.jpg',
+    src: '/static/images/showcases/showcases-13.jpg',
+    srcFallback: true,
     alexa: 15983,
     internalUrl: 'expo',
     tags: ['dev', 'creative']
@@ -610,7 +680,8 @@ const mapping = {
   hashnode: {
     title: 'Hashnode',
     link: 'https://hashnode.com',
-    // src: '/static/images/showcases/showcases-15.jpg',
+    src: '/static/images/showcases/showcases-15.jpg',
+    srcFallback: true,
     alexa: 37617,
     internalUrl: 'hashnode',
     tags: ['dev']
@@ -618,7 +689,8 @@ const mapping = {
   invision: {
     title: 'Invision',
     link: 'https://www.invisionapp.com',
-    // src: '/static/images/showcases/showcases-16.jpg',
+    src: '/static/images/showcases/showcases-16.jpg',
+    srcFallback: true,
     alexa: 3136,
     internalUrl: 'invision',
     tags: ['dev', 'creative']
@@ -626,7 +698,8 @@ const mapping = {
   hulu: {
     title: 'Hulu',
     link: 'https://www.hulu.com',
-    // src: '/static/images/showcases/showcases-17.jpg',
+    src: '/static/images/showcases/showcases-17.jpg',
+    srcFallback: true,
     alexa: 234,
     internalUrl: 'hulu',
     tags: ['entertainment']
@@ -642,7 +715,8 @@ const mapping = {
   weedmaps: {
     title: 'Weedmaps',
     link: 'https://weedmaps.com',
-    // src: '/static/images/showcases/showcases-19.jpg',
+    src: '/static/images/showcases/showcases-19.jpg',
+    srcFallback: true,
     alexa: 9591,
     internalUrl: 'weedmaps',
     tags: ['e-commerce']
@@ -650,7 +724,8 @@ const mapping = {
   sanity: {
     title: 'Sanity.io',
     link: 'https://sanity.io',
-    // src: '/static/images/showcases/showcases-20.jpg',
+    src: '/static/images/showcases/showcases-20.jpg',
+    srcFallback: true,
     alexa: 203629,
     internalUrl: 'sanity',
     tags: ['dev', 'creative']
@@ -658,7 +733,8 @@ const mapping = {
   'friday-digital': {
     title: 'FRIDAY DIGITAL',
     link: 'https://friday.kodansha.co.jp',
-    // src: '/static/images/showcases/friday-digital.jpg',
+    src: '/static/images/showcases/friday-digital.jpg',
+    srcFallback: true,
     alexa: 12364,
     internalUrl: 'friday-digital',
     tags: ['news', 'entertainment']
@@ -666,7 +742,8 @@ const mapping = {
   carbon: {
     title: 'Carbon',
     link: 'https://carbon.now.sh',
-    // src: '/static/images/showcases/carbon.jpg',
+    src: '/static/images/showcases/carbon.jpg',
+    srcFallback: true,
     alexa: 167367,
     internalUrl: 'carbon',
     tags: ['dev', 'creative']
@@ -674,7 +751,8 @@ const mapping = {
   vogue: {
     title: 'Vogue Fashion Shows',
     link: 'https://www.vogue.de/fashion-shows',
-    // src: '/static/images/showcases/vogue-fashion-shows.png',
+    src: '/static/images/showcases/vogue-fashion-shows.png',
+    srcFallback: true,
     alexa: 117866,
     internalUrl: 'vogue',
     tags: ['creative', 'entertainment']
@@ -690,7 +768,8 @@ const mapping = {
   futurism: {
     title: 'Futurism',
     link: 'https://www.futurism.com',
-    // src: '/static/images/showcases/futurism.jpg',
+    src: '/static/images/showcases/futurism.jpg',
+    srcFallback: true,
     alexa: 9133,
     internalUrl: 'futurism',
     tags: ['news']
@@ -698,7 +777,8 @@ const mapping = {
   nubank: {
     title: 'Nubank',
     link: 'https://nubank.com.br',
-    // src: '/static/images/showcases/nubank.jpg',
+    src: '/static/images/showcases/nubank.jpg',
+    srcFallback: true,
     alexa: 9420,
     internalUrl: 'nubank',
     tags: ['finance']
@@ -706,7 +786,8 @@ const mapping = {
   ferrari: {
     title: 'Ferrari',
     link: 'https://www.ferrari.com',
-    // src: '/static/images/showcases/ferrari.jpg',
+    src: '/static/images/showcases/ferrari.jpg',
+    srcFallback: true,
     alexa: 26283,
     internalUrl: 'ferrari',
     highlighted: 1,
@@ -715,7 +796,8 @@ const mapping = {
   movietickets: {
     title: 'MovieTickets',
     link: 'https://www.movietickets.com',
-    // src: '/static/images/showcases/movietickets.jpg',
+    src: '/static/images/showcases/movietickets.jpg',
+    srcFallback: true,
     alexa: 55895,
     internalUrl: 'movietickets',
     tags: ['e-commerce']
@@ -723,7 +805,8 @@ const mapping = {
   mesalva: {
     title: 'Me Salva!',
     link: 'https://www.mesalva.com',
-    // src: '/static/images/showcases/mesalva.png',
+    src: '/static/images/showcases/mesalva.png',
+    srcFallback: true,
     alexa: 71308,
     internalUrl: 'mesalva',
     tags: ['education']
@@ -731,7 +814,8 @@ const mapping = {
   ohtuleht: {
     title: 'Õhtuleht',
     link: 'https://www.ohtuleht.ee',
-    // src: '/static/images/showcases/ohtuleht.jpg',
+    src: '/static/images/showcases/ohtuleht.jpg',
+    srcFallback: true,
     alexa: 53934,
     internalUrl: 'ohtuleht',
     tags: ['news']
@@ -739,7 +823,8 @@ const mapping = {
   stargatecommand: {
     title: 'Stargate Command',
     link: 'https://www.stargatecommand.co',
-    // src: '/static/images/showcases/stargatecommand.jpg',
+    src: '/static/images/showcases/stargatecommand.jpg',
+    srcFallback: true,
     alexa: 245817,
     internalUrl: 'stargatecommand',
     tags: ['entertainment']
@@ -747,7 +832,8 @@ const mapping = {
   shakeshack: {
     title: 'Shake Shack',
     link: 'https://order.shakeshack.com/',
-    // src: '/static/images/showcases/shakeshack.jpg',
+    src: '/static/images/showcases/shakeshack.jpg',
+    srcFallback: true,
     alexa: 59713,
     internalUrl: 'shakeshack',
     tags: ['e-commerce']
@@ -755,7 +841,8 @@ const mapping = {
   coop: {
     title: 'Co-op Shop',
     link: 'https://shop.coop.co.uk',
-    // src: '/static/images/showcases/coop.png',
+    src: '/static/images/showcases/coop.png',
+    srcFallback: true,
     alexa: 77995,
     internalUrl: 'coop',
     tags: ['e-commerce']
@@ -763,7 +850,8 @@ const mapping = {
   mprnews: {
     title: 'MPR News',
     link: 'https://www.mprnews.org',
-    // src: '/static/images/showcases/mprnews.jpg',
+    src: '/static/images/showcases/mprnews.jpg',
+    srcFallback: true,
     alexa: 63031,
     internalUrl: 'mprnews',
     tags: ['news']
