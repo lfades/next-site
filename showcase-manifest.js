@@ -94,7 +94,7 @@ const mapping = {
   },
   audible: {
     title: 'Audible',
-    link: 'https://www.audible.com/about/',
+    link: 'https://www.audible.com/about',
     src: '/static/images/showcases/audible.jpg',
     alexa: 965,
     internalUrl: 'audible',
@@ -830,7 +830,7 @@ const mapping = {
   },
   shakeshack: {
     title: 'Shake Shack',
-    link: 'https://order.shakeshack.com/',
+    link: 'https://order.shakeshack.com',
     src: '/static/images/showcases/shakeshack.jpg',
     srcFallback: true,
     alexa: 59713,
@@ -882,12 +882,29 @@ const mapping = {
   },
   playstation: {
     title: 'PlayStation Competition Center',
-    link: 'https://compete.playstation.com/',
+    link: 'https://compete.playstation.com',
     src: '/static/images/showcases/playstation.jpg',
     srcFallback: true,
     alexa: 584,
     internalUrl: 'playstation',
     tags: ['entertainment']
+  },
+  jwplayer: {
+    title: 'JWPLAYER',
+    link: 'https://www.jwplayer.com',
+    src: '/static/images/showcases/jwplayer.jpg',
+    alexa: 7149,
+    internalUrl: 'jwplayer',
+    tags: ['dev']
+  },
+  hostgator: {
+    title: 'HostGator',
+    link: 'https://www.hostgator.com/help',
+    src: '/static/images/showcases/hostgator.jpg',
+    srcFallback: true,
+    alexa: 2085,
+    internalUrl: 'hostgator',
+    tags: ['dev']
   }
 };
 
