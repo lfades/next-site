@@ -1,13 +1,10 @@
 import React from 'react';
 import Link from 'next/link';
 import { useAmp } from 'next/amp';
-import { frontSortOrder, mapping } from '../../showcase-manifest';
+import { sortedByAlexa } from '../../showcase-manifest';
 
-// length should be odd number
-const DATA = frontSortOrder.slice(0, 7).map(id => {
-  return mapping[id];
-});
-
+// length should be odd numbers
+const DATA = sortedByAlexa.slice(0, 7);
 const imgWidth = 330;
 const imgHeight = 185;
 const margin = 30;
@@ -72,7 +69,7 @@ export default () => {
         `}</style>
         <div className="overlay" />
         <div className="slides">
-          {DATA.slice(0, DATA.length - 1).map(item => {
+          {DATA.map(item => {
             return (
               <div className="slide" key={`thumbnail-${item.internalUrl}`}>
                 <Img

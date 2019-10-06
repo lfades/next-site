@@ -1,16 +1,6 @@
 const categories = ['All', 'Finance', 'News', 'E-commerce', 'Creative', 'Entertainment'];
 const categoriesShort = ['All', 'Finance', 'News', 'E-comm', 'Creative', 'Entertainment'];
 
-const frontSortOrder = [
-  'ticketmaster',
-  'invision',
-  'marvel',
-  'magic-leap',
-  'nike',
-  'netflix-jobs',
-  'uber'
-];
-
 const sortOrder = [
   'marvel',
   'uber',
@@ -159,7 +149,7 @@ const mapping = {
     title: 'Televisión Pública Argentina',
     link: 'https://www.tvpublica.com.ar',
     // src: '/static/images/showcases/tvpublica.jpg',
-    alexia: 55843,
+    alexa: 56932,
     internalUrl: 'tvpublica',
     tags: ['news']
   },
@@ -912,10 +902,12 @@ const mapping = {
   }
 };
 
+const sortedByAlexa = Object.values(mapping).sort((a, b) => a.alexa - b.alexa);
+
 module.exports = {
   categories,
   categoriesShort,
   sortOrder,
-  frontSortOrder,
-  mapping
+  mapping,
+  sortedByAlexa
 };
