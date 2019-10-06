@@ -1,12 +1,11 @@
-import fs from 'fs';
-import { join } from 'path';
 import { NextApiRequest, NextApiResponse } from 'next';
 import nodeFetch from 'node-fetch';
 import zeitFetch from '@zeit/fetch';
 import mql from '@microlink/mql';
 import { mapping } from '../../showcase-manifest';
 
-const BACKEND_URL = process.env.BACKEND_URL || 'http://localhost:3000';
+const BACKEND_URL =
+  process.env.NODE_ENV === 'production' ? process.env.BACKEND_URL : 'http://localhost:3000';
 const fetch = zeitFetch(nodeFetch);
 const showcases = mapping as {
   [id: string]:
@@ -67,7 +66,7 @@ export default async function screenshot(req: NextApiRequest, res: NextApiRespon
 
     // Only use mql in production to avoid wasting all the free requests, you can change this to
     // test it on localhost, be aware that a single request to /showcases can take all your requests
-    if (process.env.NODE_ENV === 'production') {
+    if (process.env.NODE_ENV === 'production' && !showcase.src) {
       try {
         const { status, data } = await mql(showcase.link, {
           apiKey: process.env.MICROLINK_API_KEY,
@@ -78,15 +77,11 @@ export default async function screenshot(req: NextApiRequest, res: NextApiRespon
           waitUntil: 'load',
           type: 'jpeg',
           deviceScaleFactor: getScaleFactor(size),
+          force: true,
           // Wait for slow sites (and their fancy but slow animations)
           waitFor: 3000,
           width: 1920,
-          height: 1080,
-          // TEMPORAL
-          force: true,
-          // Cache the images for 31 days, the endpoint already has a cache of 2 months so this
-          // is especially intended for deployments in new PRs
-          ttl: 'max'
+          height: 1080
         });
 
         if (status !== 'success') {
@@ -113,8 +108,8 @@ export default async function screenshot(req: NextApiRequest, res: NextApiRespon
     const contentType = screenshot.headers.get('content-type');
     const contentLength = screenshot.headers.get('content-length');
 
-    // Cache the images for 2 months
-    res.setHeader('cache-control', 'immutable,max-age=5184000');
+    // Cache the images for 1 day
+    res.setHeader('cache-control', 's-maxage=86400,stale-while-revalidate');
 
     if (contentType) {
       res.setHeader('content-type', contentType);
