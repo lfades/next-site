@@ -439,7 +439,7 @@ const mapping = {
   'syntax.fm': {
     title: 'Syntax',
     link: 'https://syntax.fm',
-    src: '/static/images/showcases/syntax.fm.jpg',
+    // src: '/static/images/showcases/syntax.fm.jpg',
     alexa: 422189,
     internalUrl: 'syntax.fm',
     tags: ['dev', 'creative']
@@ -595,9 +595,8 @@ const mapping = {
   marvel: {
     title: 'Marvel',
     link: 'https://www.marvel.com',
-    src: '/static/images/showcases/marvel.jpg',
-    width: 3840,
-    height: 2204,
+    // src: '/static/images/showcases/marvel.jpg',
+    alexa: 8665,
     internalUrl: 'marvel',
     tags: ['entertainment']
   },
@@ -896,14 +895,14 @@ const mapping = {
     internalUrl: 'realtor',
     tags: ['e-commerce']
   },
-  leafly: {
-    title: 'Leafly',
-    link: 'https://www.leafly.com',
-    src: '/addonepls',
-    alexa: 5850,
-    internalUrl: 'leafly',
-    tags: ['e-commerce']
-  },
+  // leafly: {
+  //   title: 'Leafly',
+  //   link: 'https://www.leafly.com',
+  //   src: '/addonepls',
+  //   alexa: 5850,
+  //   internalUrl: 'leafly',
+  //   tags: ['e-commerce']
+  // },
   playstation: {
     title: 'PlayStation Competition Center',
     link: 'https://compete.playstation.com/',
