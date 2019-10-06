@@ -125,6 +125,7 @@ const mapping = {
     srcFallback: true,
     alexa: 84640,
     internalUrl: 'giveindia',
+    highlighted: 2,
     tags: []
   },
   allvoices: {
@@ -216,7 +217,7 @@ const mapping = {
     srcFallback: true,
     alexa: 50549,
     internalUrl: 'framer',
-    highlighted: 2,
+    highlighted: 1,
     tags: ['creative']
   },
   garticio: {
@@ -297,7 +298,7 @@ const mapping = {
     srcFallback: true,
     alexa: 1653,
     internalUrl: 'staples',
-    highlighted: 2,
+    highlighted: 1,
     tags: ['e-commerce']
   },
   ticketmaster: {
@@ -342,6 +343,7 @@ const mapping = {
     srcFallback: true,
     alexa: 156068,
     internalUrl: 'aenetworks',
+    highlighted: 2,
     tags: ['news']
   },
   worldpopulationreview: {
@@ -789,7 +791,7 @@ const mapping = {
     srcFallback: true,
     alexa: 26283,
     internalUrl: 'ferrari',
-    highlighted: 1,
+    highlighted: 2,
     tags: ['entertainment']
   },
   movietickets: {
@@ -895,6 +897,7 @@ const mapping = {
     src: '/static/images/showcases/jwplayer.jpg',
     alexa: 7149,
     internalUrl: 'jwplayer',
+    highlighted: 2,
     tags: ['dev']
   },
   hostgator: {
