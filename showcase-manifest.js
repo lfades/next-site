@@ -906,6 +906,33 @@ const mapping = {
     alexa: 2085,
     internalUrl: 'hostgator',
     tags: ['dev']
+  },
+  elastic: {
+    title: 'Elastic',
+    link: 'https://www.elastic.co',
+    src: '/static/images/showcases/elastic.jpg',
+    srcFallback: true,
+    alexa: 5709,
+    internalUrl: 'elastic',
+    tags: ['dev']
+  },
+  tiktok: {
+    title: 'TikTok',
+    link: 'https://www.tiktok.com/en',
+    src: '/static/images/showcases/tiktok.jpg',
+    srcFallback: true,
+    alexa: 1163,
+    internalUrl: 'tiktok',
+    tags: ['entertainment', 'creative']
+  },
+  hilton: {
+    title: 'Hilton',
+    link: 'https://www.hilton.com/en/hilton',
+    src: '/static/images/showcases/hilton.jpg',
+    srcFallback: true,
+    alexa: 1220,
+    internalUrl: 'hilton',
+    tags: ['e-commerce']
   }
 };
 
