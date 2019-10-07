@@ -1455,7 +1455,7 @@ A custom `<Document>` is commonly used to augment your application's `<html>` an
 This is necessary because Next.js pages skip the definition of the surrounding document's markup.
 
 This allows you to support Server-Side Rendering for CSS-in-JS libraries like
-[styled-components](/examples/with-styled-components) or [emotion](/examples/with-emotion).
+[styled-components](https://github.com/zeit/next.js/tree/canary/examples/with-styled-components) or [emotion](https://github.com/zeit/next.js/tree/canary/examples/with-emotion).
 Note, [styled-jsx](https://github.com/zeit/styled-jsx) is included in Next.js by default.
 
 A custom `<Document>` can also include `getInitialProps` for expressing asynchronous server-rendering data requirements.
@@ -1619,7 +1619,7 @@ module.exports = (phase, { defaultConfig }) => {
 }
 ```
 
-`phase` is the current context in which the configuration is loaded. You can see all phases here: [constants](/packages/next/next-server/lib/constants.ts)
+`phase` is the current context in which the configuration is loaded. You can see all phases here: [constants](https://github.com/zeit/next.js/tree/canary/packages/next/next-server/lib/constants.ts)
 Phases can be imported from `next/constants`:
 
 ```js
@@ -2592,7 +2592,7 @@ Next.js bundles [styled-jsx](https://github.com/zeit/styled-jsx) supporting scop
 
 We track V8. Since V8 has wide support for ES6 and `async` and `await`, we transpile those. Since V8 doesn’t support class decorators, we don’t transpile those.
 
-See the documentation about [customizing the babel config](#customizing-babel-config) and [next/preset](/packages/next/build/babel/preset.ts) for more information.
+See the documentation about [customizing the babel config](#customizing-babel-config) and [next/preset](https://github.com/zeit/next.js/tree/canary/packages/next/build/babel/preset.ts) for more information.
 
 </details>
 
@@ -2631,28 +2631,28 @@ It’s up to you. `getInitialProps` is an `async` function (or a regular functio
 <details>
   <summary>Can I use it with GraphQL?</summary>
 
-Yes! Here's an example with [Apollo](/examples/with-apollo).
+Yes! Here's an example with [Apollo](https://github.com/zeit/next.js/tree/canary/examples/with-apollo).
 
 </details>
 
 <details>
 <summary>Can I use it with Redux and thunk?</summary>
 
-Yes! Here's an [example](/examples/with-redux-thunk).
+Yes! Here's an [example](https://github.com/zeit/next.js/tree/canary/examples/with-redux-thunk).
 
 </details>
 
 <details>
 <summary>Can I use it with Redux?</summary>
 
-Yes! Here's an [example](/examples/with-redux).
+Yes! Here's an [example](https://github.com/zeit/next.js/tree/canary/examples/with-redux).
 
 </details>
 
 <details>
 <summary>Can I use Next with my favorite Javascript library or toolkit?</summary>
 
-Since our first release we've had **many** example contributions, you can check them out in the [examples](/examples) directory.
+Since our first release we've had **many** example contributions, you can check them out in the [examples](https://github.com/zeit/next.js/tree/canary/examples) directory.
 
 </details>
 
@@ -2671,7 +2671,7 @@ As we were researching options for server-rendering React that didn’t involve 
 
 ## Contributing
 
-Please see our [contributing.md](/contributing.md).
+Please see our [contributing.md](https://github.com/zeit/next.js/tree/canary/contributing.md).
 
 ## Authors
 
