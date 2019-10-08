@@ -13,7 +13,7 @@ type Showcase = {
   tags?: string[];
 };
 
-const MQL_ENABLED = true;
+const MQL_ENABLED = false;
 const BACKEND_URL =
   process.env.NODE_ENV === 'production' ? process.env.BACKEND_URL : 'http://localhost:3000';
 const fetch = zeitFetch(nodeFetch);
