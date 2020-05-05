@@ -9,6 +9,7 @@ import Button from '../button';
 import ArrowIcon from '../arrow-icon';
 import RightArrow from '../icons/arrow-right';
 import LeftArrow from '../icons/arrow-left';
+import Ast from './ast';
 
 function areEqual(prevProps, props) {
   return prevProps.route.path === props.route.path;
@@ -27,8 +28,7 @@ function DocsPage({ route, html, prevRoute, nextRoute }) {
         available <a href="/docs/old">here</a>.
       </Notification>
 
-      {/* eslint-disable-next-line */}
-      <div dangerouslySetInnerHTML={{ __html: html }} />
+      <Ast ast={html} components={{}} />
 
       <div className="page-nav">
         {prevRoute ? (
